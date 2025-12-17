@@ -1,0 +1,16 @@
+{
+  "short_name": "Netflix Clone",
+  "name": "Netflix Clone - Movie & TV Show Browser",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#E50914",
+  "background_color": "#141414"
+}
