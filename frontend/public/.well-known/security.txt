@@ -1,0 +1,8 @@
+Contact: https://github.com/d-codez/netflix-clone
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://d-codez.github.io/netflix-clone/.well-known/security.txt
+
+# This is an educational Netflix Clone project
+# Uses TMDB API for movie data - no malicious content
+

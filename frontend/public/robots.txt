@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# This is a Netflix Clone project for educational purposes
+# It uses The Movie Database (TMDB) API for movie data
+# No phishing or malicious content
+
