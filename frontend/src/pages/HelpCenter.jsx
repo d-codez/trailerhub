@@ -35,7 +35,7 @@ const HelpCenter = () => {
         </Link>
 
         <h1 className="text-4xl font-bold mb-8">Help Center</h1>
-        
+
         <div className="space-y-6">
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>

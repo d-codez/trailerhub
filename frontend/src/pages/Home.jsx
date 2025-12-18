@@ -35,8 +35,8 @@ const Home = ({ searchQuery, onSearch }) => {
   useEffect(() => {
     const fetchAllData = async () => {
       setIsLoading(true);
-      
-      const [trending, popularMovies, topRatedMovies, nowPlaying, upcoming, popularTV, topRatedTV] = 
+
+      const [trending, popularMovies, topRatedMovies, nowPlaying, upcoming, popularTV, topRatedTV] =
         await Promise.all([
           getTrending('all', 'week'),
           getPopularMovies(),
@@ -56,7 +56,7 @@ const Home = ({ searchQuery, onSearch }) => {
         popularTV: popularTV?.results || [],
         topRatedTV: topRatedTV?.results || []
       });
-      
+
       setIsLoading(false);
     };
 

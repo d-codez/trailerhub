@@ -12,12 +12,12 @@ const About = () => {
         </Link>
 
         <h1 className="text-4xl font-bold mb-8">About TrailerHub</h1>
-        
+
         <div className="prose prose-invert max-w-none space-y-6 text-gray-300">
           <section>
             <p className="text-lg">
-              TrailerHub is a modern, responsive platform for discovering and watching movie and TV show trailers. 
-              Built with React and powered by The Movie Database (TMDB) API, we provide an elegant way to browse 
+              TrailerHub is a modern, responsive platform for discovering and watching movie and TV show trailers.
+              Built with React and powered by The Movie Database (TMDB) API, we provide an elegant way to browse
               trending content, search for your favorite movies and shows, and watch trailers all in one place.
             </p>
           </section>
@@ -25,7 +25,7 @@ const About = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">Our Mission</h2>
             <p>
-              To provide a beautiful, user-friendly platform for movie and TV show discovery through trailers, 
+              To provide a beautiful, user-friendly platform for movie and TV show discovery through trailers,
               making it easy for users to find their next favorite content.
             </p>
           </section>
@@ -46,7 +46,7 @@ const About = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">Open Source</h2>
             <p>
-              TrailerHub is an open-source project. You can view the source code, report issues, 
+              TrailerHub is an open-source project. You can view the source code, report issues,
               and contribute on <a href="https://github.com/d-codez/trailerhub" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:underline">GitHub</a>.
             </p>
           </section>
@@ -54,8 +54,8 @@ const About = () => {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">Data Source</h2>
             <p>
-              All movie and TV show information, including posters, descriptions, and metadata, 
-              is provided by <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:underline">The Movie Database (TMDB)</a>, 
+              All movie and TV show information, including posters, descriptions, and metadata,
+              is provided by <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:underline">The Movie Database (TMDB)</a>,
               a community-driven database of movie and TV content.
             </p>
           </section>

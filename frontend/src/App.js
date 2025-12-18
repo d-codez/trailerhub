@@ -20,7 +20,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-[#141414]">
         <Navbar onSearch={handleSearch} />
-        
+
         <Routes>
           <Route path="/" element={<Home searchQuery={searchQuery} onSearch={handleSearch} />} />
           <Route path="/terms" element={<TermsOfService />} />

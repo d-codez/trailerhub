@@ -12,7 +12,7 @@ const Contact = () => {
         </Link>
 
         <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
-        
+
         <div className="space-y-8">
           <section>
             <p className="text-gray-300 text-lg mb-6">
@@ -22,7 +22,7 @@ const Contact = () => {
 
           <section className="bg-gray-900/50 rounded-lg p-8">
             <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <Github className="w-6 h-6 text-[#2563EB] mt-1 flex-shrink-0" />
@@ -31,9 +31,9 @@ const Contact = () => {
                   <p className="text-gray-300 mb-2">
                     Report issues, suggest features, or contribute to the project.
                   </p>
-                  <a 
-                    href="https://github.com/d-codez/trailerhub" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/d-codez/trailerhub"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#2563EB] hover:underline"
                   >
