@@ -1,4 +1,4 @@
-/* Netflix Clone Styles */
+/* TrailerHub Styles */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
@@ -114,13 +114,13 @@ body {
   overflow: hidden;
 }
 
-/* Netflix red accent */
-.netflix-red {
-  color: #E50914;
+/* TrailerHub blue accent */
+.trailerhub-blue {
+  color: #2563EB;
 }
 
-.bg-netflix-red {
-  background-color: #E50914;
+.bg-trailerhub-blue {
+  background-color: #2563EB;
 }
 
 /* Card hover effect improvements */
@@ -138,7 +138,7 @@ body {
 /* Focus styles */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #E50914;
+  outline: 2px solid #2563EB;
   outline-offset: 2px;
 }
 
@@ -193,7 +193,7 @@ a:focus-visible {
 
 /* Selection color */
 ::selection {
-  background-color: #E50914;
+  background-color: #2563EB;
   color: white;
 }
 

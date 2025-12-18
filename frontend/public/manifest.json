@@ -1,6 +1,6 @@
 {
-  "short_name": "Netflix Clone",
-  "name": "Netflix Clone - Movie & TV Show Browser",
+  "short_name": "TrailerHub",
+  "name": "TrailerHub - Movie & TV Show Trailers",
   "icons": [
     {
       "src": "favicon.svg",
@@ -11,6 +11,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#E50914",
+  "theme_color": "#2563EB",
   "background_color": "#141414"
 }

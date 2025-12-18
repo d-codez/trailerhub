@@ -19,7 +19,7 @@
         gap: 20px;
       }
       button {
-        background: #e50914;
+        background: #2563EB;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -28,12 +28,12 @@
         margin: 10px 0;
       }
       button:hover {
-        background: #f40612;
+        background: #1D4ED8;
       }
     </style>
   </head>
   <body>
-    <h1>Netflix Clone Icon Generator</h1>
+    <h1>TrailerHub Icon Generator</h1>
     <p>Click the button to generate and download favicon files.</p>
     <button onclick="generateIcons()">Generate Icons</button>
     <div class="icon-set" id="icons"></div>
@@ -50,8 +50,8 @@
           canvas.height = size;
           const ctx = canvas.getContext('2d');
 
-          // Draw red background
-          ctx.fillStyle = '#E50914';
+          // Draw blue background
+          ctx.fillStyle = '#2563EB';
           ctx.fillRect(0, 0, size, size);
 
           // Draw rounded corners
@@ -61,13 +61,13 @@
           ctx.roundRect(0, 0, size, size, radius);
           ctx.fill();
 
-          // Draw white N
+          // Draw white T
           ctx.globalCompositeOperation = 'source-over';
           ctx.fillStyle = 'white';
           ctx.font = `bold ${size * 0.6}px Arial`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText('N', size / 2, size / 2);
+          ctx.fillText('T', size / 2, size / 2);
 
           // Add to page
           const container = document.createElement('div');

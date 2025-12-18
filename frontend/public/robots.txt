@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# This is a Netflix Clone project for educational purposes
+# This is TrailerHub - A movie and TV show trailer browsing platform
 # It uses The Movie Database (TMDB) API for movie data
 # No phishing or malicious content
 

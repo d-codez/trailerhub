@@ -1,14 +1,12 @@
-# 🎬 Netflix Clone
+# 🎬 TrailerHub
 
-A beautiful, responsive Netflix-inspired movie and TV show browsing application built with React and powered by The Movie Database (TMDB) API.
+A beautiful, responsive movie and TV show trailer browsing platform built with React and powered by The Movie Database (TMDB) API. Discover your next favorite movie or show by watching trailers!
 
-![Netflix Clone](https://img.shields.io/badge/React-19.0.0-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.17-38bdf8) ![License](https://img.shields.io/badge/License-MIT-green)
+![TrailerHub](https://img.shields.io/badge/React-19.0.0-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.17-38bdf8) ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 🌐 Live Demo
 
 **🔗 [View Live Site](https://d-codez.github.io/netflix-clone/)**
-
-> ⚠️ **Note:** Some browsers may show a security warning due to the site name containing "netflix". This is a false positive - the site is completely safe and uses only legitimate APIs. You can report it as safe to Google Safe Browsing.
 
 ## ✨ Features
 
@@ -18,8 +16,9 @@ A beautiful, responsive Netflix-inspired movie and TV show browsing application 
 - 🎬 **Content Rows** - Browse trending, popular, top-rated, and upcoming content
 - 📺 **Movie & TV Details** - Detailed information with cast, crew, and trailers
 - 🎞️ **Trailer Modal** - Watch trailers in a beautiful modal overlay
-- 🎨 **Netflix-Style UI** - Authentic Netflix-inspired design with smooth animations
+- 🎨 **Modern UI** - Clean, modern design with smooth animations
 - 🌙 **Dark Theme** - Beautiful dark theme optimized for viewing
+- 💙 **Blue Theme** - Elegant blue color scheme
 
 ## 🛠️ Tech Stack
 
@@ -166,7 +165,7 @@ yarn test           # Run tests
 
 ### Colors
 Edit `tailwind.config.js` to customize the color scheme:
-- Primary: `#E50914` (Netflix Red)
+- Primary: `#2563EB` (Blue-600)
 - Background: `#141414` (Dark)
 - Text: White/Gray variants
 
@@ -190,13 +189,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgments
 
 - [The Movie Database (TMDB)](https://www.themoviedb.org/) - For the amazing API
-- [Netflix](https://www.netflix.com/) - For the design inspiration
 - [Radix UI](https://www.radix-ui.com/) - For accessible components
 - [Tailwind CSS](https://tailwindcss.com/) - For the utility-first CSS
 
 ## ⚠️ Disclaimer
 
-This is an **educational project** created for learning purposes. It is not affiliated with, endorsed by, or connected to Netflix. All movie and TV show data is provided by The Movie Database (TMDB) API.
+This is an **educational project** created for learning purposes. All movie and TV show data is provided by The Movie Database (TMDB) API.
 
 ## 📧 Contact
 

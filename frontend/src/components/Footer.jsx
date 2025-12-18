@@ -51,7 +51,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-xs">
-          © 1997-2025 Netflix, Inc.
+          © 2025 TrailerHub. All rights reserved.
         </p>
       </div>
     </footer>

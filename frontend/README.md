@@ -1,6 +1,6 @@
-# Netflix Clone - Frontend
+# TrailerHub - Frontend
 
-This is the frontend React application for the Netflix Clone project.
+This is the frontend React application for TrailerHub - a movie and TV show trailer browsing platform.
 
 ## Quick Start
 
