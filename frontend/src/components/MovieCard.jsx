@@ -15,10 +15,10 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
   const handlePlayClick = async (e) => {
     e.stopPropagation();
     const type = item.media_type || mediaType;
-    const videos = type === 'tv' 
+    const videos = type === 'tv'
       ? await getTVVideos(item.id)
       : await getMovieVideos(item.id);
-    
+
     const key = getTrailerKey(videos);
     if (key) {
       onPlayTrailer(key, title);
@@ -41,12 +41,12 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Base card */}
-      <div className="relative aspect-[2/3] rounded overflow-hidden">
+      <div className="relative aspect-[2/3] rounded overflow-hidden transition-transform duration-300 group-hover:scale-105">
         {displayImage ? (
           <img
             src={displayImage}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-full object-cover"
             loading="lazy"
             onError={() => setImageError(true)}
           />
@@ -59,12 +59,16 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
 
       {/* Expanded hover card */}
       {isHovered && (
-        <div 
-          className="absolute -top-4 left-1/2 -translate-x-1/2 w-[280px] md:w-[320px] bg-[#181818] rounded-md shadow-2xl z-50 overflow-hidden transition-all duration-300 animate-in fade-in zoom-in-95"
-          style={{ animationDuration: '200ms' }}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 w-[280px] md:w-[320px] bg-[#181818] rounded-lg shadow-2xl z-[100] overflow-hidden"
+          style={{
+            top: '-16px',
+            animation: 'slideUpFadeIn 0.2s ease-out',
+            transform: 'translateX(-50%)'
+          }}
         >
           {/* Preview image */}
-          <div className="relative aspect-video">
+          <div className="relative aspect-video overflow-hidden">
             {backdropUrl || displayImage ? (
               <img
                 src={backdropUrl || displayImage}
@@ -74,54 +78,53 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
             ) : (
               <div className={`w-full h-full ${fallbackBg}`} />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
-            <h3 className="absolute bottom-2 left-3 text-white font-semibold text-sm md:text-base drop-shadow-lg line-clamp-1">
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#181818] via-[#181818]/80 to-transparent pointer-events-none" />
+            <h3 className="absolute bottom-3 left-3 right-3 text-white font-semibold text-sm md:text-base drop-shadow-lg line-clamp-1">
               {title}
             </h3>
           </div>
 
           {/* Action buttons */}
-          <div className="p-3">
-            <div className="flex items-center gap-2 mb-3">
+          <div className="p-3 space-y-3">
+            <div className="flex items-center gap-2">
               <button
                 onClick={handlePlayClick}
-                className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-white/80 transition-colors"
+                className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-110 active:scale-95"
+                aria-label="Play trailer"
               >
                 <Play className="w-5 h-5 fill-black text-black ml-0.5" />
               </button>
-              <button className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white transition-colors">
+              <button
+                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95"
+                aria-label="Add to list"
+              >
                 <Plus className="w-5 h-5 text-white" />
               </button>
-              <button className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white transition-colors">
+              <button
+                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95"
+                aria-label="Like"
+              >
                 <ThumbsUp className="w-4 h-4 text-white" />
               </button>
               <button
                 onClick={handleMoreInfo}
-                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white transition-colors ml-auto"
+                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95 ml-auto"
+                aria-label="More info"
               >
                 <ChevronDown className="w-5 h-5 text-white" />
               </button>
             </div>
 
             {/* Info */}
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-sm flex-wrap">
               {rating && (
                 <span className="text-green-500 font-semibold">{rating}% Match</span>
               )}
-              <span className="border border-gray-500 px-1 text-gray-400 text-xs">16+</span>
+              <span className="border border-gray-500 px-1.5 py-0.5 text-gray-400 text-xs rounded">16+</span>
               {releaseYear && (
                 <span className="text-gray-400">{releaseYear}</span>
               )}
-              <span className="border border-gray-500 px-1 text-gray-400 text-xs">HD</span>
-            </div>
-
-            {/* Genres preview */}
-            <div className="flex items-center gap-2 mt-2 text-xs text-gray-300">
-              <span>Action</span>
-              <span className="text-gray-600">•</span>
-              <span>Drama</span>
-              <span className="text-gray-600">•</span>
-              <span>Thriller</span>
+              <span className="border border-gray-500 px-1.5 py-0.5 text-gray-400 text-xs rounded">HD</span>
             </div>
           </div>
         </div>
