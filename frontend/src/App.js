@@ -17,17 +17,17 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="min-h-screen bg-[#141414]">
+    <Router basename='/trailerhub'>
+      <div className='min-h-screen bg-[#141414]'>
         <Navbar onSearch={handleSearch} />
 
         <Routes>
-          <Route path="/" element={<Home searchQuery={searchQuery} onSearch={handleSearch} />} />
-          <Route path="/terms" element={<TermsOfService />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/help" element={<HelpCenter />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
+          <Route path='/' element={<Home searchQuery={searchQuery} onSearch={handleSearch} />} />
+          <Route path='/terms' element={<TermsOfService />} />
+          <Route path='/privacy' element={<PrivacyPolicy />} />
+          <Route path='/help' element={<HelpCenter />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
         </Routes>
       </div>
     </Router>

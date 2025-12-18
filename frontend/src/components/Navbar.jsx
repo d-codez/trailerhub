@@ -37,7 +37,13 @@ const Navbar = ({ onSearch }) => {
       <div className='flex items-center justify-between px-4 md:px-12 py-3'>
         <div className='flex items-center gap-6 md:gap-10'>
           {/* TrailerHub Logo */}
-          <Link to='/' className='flex items-center' onClick={() => setSearchQuery('')}>
+          <Link
+            to='/'
+            className='flex items-center'
+            onClick={() => {
+              setSearchQuery('');
+              onSearch('');
+            }}>
             {!logoError ? (
               <img src='/logo.svg' alt='TrailerHub' className='h-6 md:h-7 cursor-pointer' onError={() => setLogoError(true)} />
             ) : (
@@ -70,7 +76,6 @@ const Navbar = ({ onSearch }) => {
               </button>
             )}
           </div>
-
         </div>
       </div>
     </nav>
