@@ -6,7 +6,7 @@ A beautiful, responsive movie and TV show trailer browsing platform built with R
 
 ## 🌐 Live Demo
 
-**🔗 [View Live Site](https://d-codez.github.io/netflix-clone/)**
+**🔗 [View Live Site](https://d-codez.github.io/trailerhub/)**
 
 ## ✨ Features
 
@@ -47,8 +47,8 @@ A beautiful, responsive movie and TV show trailer browsing platform built with R
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/d-codez/netflix-clone.git
-cd netflix-clone
+git clone https://github.com/d-codez/trailerhub.git
+cd trailerhub
 ```
 
 ### 2. Install Dependencies
@@ -75,7 +75,7 @@ yarn build
 ## 📁 Project Structure
 
 ```
-netflix-clone/
+trailerhub/
 ├── frontend/
 │   ├── public/          # Static assets, favicon, manifest
 │   ├── src/
@@ -145,7 +145,7 @@ The project is configured for automatic deployment:
 
 1. Push to `main` branch
 2. GitHub Actions builds and deploys automatically
-3. Site updates at: `https://d-codez.github.io/netflix-clone/`
+3. Site updates at: `https://d-codez.github.io/trailerhub/`
 
 ## 📝 Available Scripts
 
@@ -199,7 +199,7 @@ This is an **educational project** created for learning purposes. All movie and 
 ## 📧 Contact
 
 - **GitHub**: [@d-codez](https://github.com/d-codez)
-- **Repository**: [netflix-clone](https://github.com/d-codez/netflix-clone)
+- **Repository**: [trailerhub](https://github.com/d-codez/trailerhub)
 
 ---
 

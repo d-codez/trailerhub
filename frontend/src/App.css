@@ -207,7 +207,7 @@ iframe {
   .mobile-menu {
     animation: slideDown 0.3s ease-out;
   }
-  
+
   @keyframes slideDown {
     from {
       opacity: 0;
