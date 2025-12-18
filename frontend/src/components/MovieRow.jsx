@@ -35,7 +35,7 @@ const MovieRow = ({ title, items, onPlayTrailer, onMoreInfo, mediaType = 'movie'
         {/* Left Arrow */}
         <button
           onClick={() => scroll('left')}
-          className={`h-60 absolute left-0 top-0 bottom-0 z-40 w-12 md:w-16 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity duration-300 ${
+          className={`h-60 md:h-[300px] absolute left-0 top-0 bottom-0 z-40 w-12 md:w-16 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity duration-300 ${
             showLeftArrow ? 'visible' : 'invisible'
           }`}>
           <ChevronLeft className='w-8 h-8 md:w-10 md:h-10 text-white' />
@@ -55,7 +55,7 @@ const MovieRow = ({ title, items, onPlayTrailer, onMoreInfo, mediaType = 'movie'
         {/* Right Arrow */}
         <button
           onClick={() => scroll('right')}
-          className={`h-60 absolute right-0 top-0 bottom-28 z-40 w-12 md:w-16 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity duration-300 ${
+          className={`h-60 md:h-[300px] absolute right-0 top-0 bottom-28 z-40 w-12 md:w-16 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity duration-300 ${
             showRightArrow ? 'visible' : 'invisible'
           }`}>
           <ChevronRight className='w-8 h-8 md:w-10 md:h-10 text-white' />

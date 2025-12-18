@@ -13,7 +13,7 @@ import {
   getTopRatedTVShows,
   getNowPlayingMovies,
   getUpcomingMovies,
-  searchMulti
+  searchMulti,
 } from '../lib/tmdb';
 
 const Home = ({ searchQuery, onSearch }) => {
@@ -24,7 +24,7 @@ const Home = ({ searchQuery, onSearch }) => {
     nowPlaying: [],
     upcoming: [],
     popularTV: [],
-    topRatedTV: []
+    topRatedTV: [],
   });
   const [isLoading, setIsLoading] = useState(true);
   const [trailerModal, setTrailerModal] = useState({ isOpen: false, key: null, title: '' });
@@ -36,16 +36,15 @@ const Home = ({ searchQuery, onSearch }) => {
     const fetchAllData = async () => {
       setIsLoading(true);
 
-      const [trending, popularMovies, topRatedMovies, nowPlaying, upcoming, popularTV, topRatedTV] =
-        await Promise.all([
-          getTrending('all', 'week'),
-          getPopularMovies(),
-          getTopRatedMovies(),
-          getNowPlayingMovies(),
-          getUpcomingMovies(),
-          getPopularTVShows(),
-          getTopRatedTVShows()
-        ]);
+      const [trending, popularMovies, topRatedMovies, nowPlaying, upcoming, popularTV, topRatedTV] = await Promise.all([
+        getTrending('all', 'week'),
+        getPopularMovies(),
+        getTopRatedMovies(),
+        getNowPlayingMovies(),
+        getUpcomingMovies(),
+        getPopularTVShows(),
+        getTopRatedTVShows(),
+      ]);
 
       setRows({
         trending: trending?.results || [],
@@ -54,7 +53,7 @@ const Home = ({ searchQuery, onSearch }) => {
         nowPlaying: nowPlaying?.results || [],
         upcoming: upcoming?.results || [],
         popularTV: popularTV?.results || [],
-        topRatedTV: topRatedTV?.results || []
+        topRatedTV: topRatedTV?.results || [],
       });
 
       setIsLoading(false);
@@ -117,67 +116,64 @@ const Home = ({ searchQuery, onSearch }) => {
         />
       ) : (
         <>
-          <HeroBanner
-            onPlayTrailer={openTrailerModal}
-            onMoreInfo={openDetailModal}
-          />
+          <HeroBanner onPlayTrailer={openTrailerModal} onMoreInfo={openDetailModal} />
 
-          <div className="relative -mt-32 z-10">
+          <div className='relative -mt-24 z-10 md:-mt-12 sm:-mt-16'>
             {isLoading ? (
-              <div className="space-y-8 px-4 md:px-12">
+              <div className='space-y-8 px-4 md:px-12'>
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="h-64 bg-gray-800/30 rounded animate-pulse" />
+                  <div key={i} className='h-64 bg-gray-800/30 rounded animate-pulse' />
                 ))}
               </div>
             ) : (
               <>
                 <MovieRow
-                  title="Trending Now"
+                  title='Trending Now'
                   items={rows.trending}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
                 />
                 <MovieRow
-                  title="Popular Movies"
+                  title='Popular Movies'
                   items={rows.popularMovies}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
-                  mediaType="movie"
+                  mediaType='movie'
                 />
                 <MovieRow
-                  title="Now Playing in Theaters"
+                  title='Now Playing in Theaters'
                   items={rows.nowPlaying}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
-                  mediaType="movie"
+                  mediaType='movie'
                 />
                 <MovieRow
-                  title="Popular TV Shows"
+                  title='Popular TV Shows'
                   items={rows.popularTV}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
-                  mediaType="tv"
+                  mediaType='tv'
                 />
                 <MovieRow
-                  title="Top Rated Movies"
+                  title='Top Rated Movies'
                   items={rows.topRatedMovies}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
-                  mediaType="movie"
+                  mediaType='movie'
                 />
                 <MovieRow
-                  title="Upcoming Movies"
+                  title='Upcoming Movies'
                   items={rows.upcoming}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
-                  mediaType="movie"
+                  mediaType='movie'
                 />
                 <MovieRow
-                  title="Top Rated TV Shows"
+                  title='Top Rated TV Shows'
                   items={rows.topRatedTV}
                   onPlayTrailer={openTrailerModal}
                   onMoreInfo={openDetailModal}
-                  mediaType="tv"
+                  mediaType='tv'
                 />
               </>
             )}
@@ -189,24 +185,15 @@ const Home = ({ searchQuery, onSearch }) => {
 
       {/* Trailer Modal */}
       {trailerModal.isOpen && (
-        <TrailerModal
-          trailerKey={trailerModal.key}
-          title={trailerModal.title}
-          onClose={closeTrailerModal}
-        />
+        <TrailerModal trailerKey={trailerModal.key} title={trailerModal.title} onClose={closeTrailerModal} />
       )}
 
       {/* Detail Modal */}
       {detailModal.isOpen && detailModal.item && (
-        <DetailModal
-          item={detailModal.item}
-          onClose={closeDetailModal}
-          onPlayTrailer={openTrailerModal}
-        />
+        <DetailModal item={detailModal.item} onClose={closeDetailModal} onPlayTrailer={openTrailerModal} />
       )}
     </>
   );
 };
 
 export default Home;
-

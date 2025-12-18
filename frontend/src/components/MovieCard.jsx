@@ -15,9 +15,7 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
   const handlePlayClick = async (e) => {
     e.stopPropagation();
     const type = item.media_type || mediaType;
-    const videos = type === 'tv'
-      ? await getTVVideos(item.id)
-      : await getMovieVideos(item.id);
+    const videos = type === 'tv' ? await getTVVideos(item.id) : await getMovieVideos(item.id);
 
     const key = getTrailerKey(videos);
     if (key) {
@@ -36,23 +34,22 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
 
   return (
     <div
-      className="relative flex-shrink-0 w-[160px] md:w-[200px] cursor-pointer group"
+      className='relative flex-shrink-0 w-[160px] md:w-[200px] cursor-pointer group'
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+      onMouseLeave={() => setIsHovered(false)}>
       {/* Base card */}
-      <div className="relative aspect-[2/3] rounded overflow-hidden transition-transform duration-300 group-hover:scale-105">
+      <div className='relative aspect-[2/3] rounded overflow-hidden transition-transform duration-300 group-hover:scale-105'>
         {displayImage ? (
           <img
             src={displayImage}
             alt={title}
-            className="w-full h-full object-cover"
-            loading="lazy"
+            className='w-full h-full object-cover'
+            loading='lazy'
             onError={() => setImageError(true)}
           />
         ) : (
           <div className={`w-full h-full ${fallbackBg} flex items-center justify-center`}>
-            <span className="text-white/60 text-sm text-center px-2">{title}</span>
+            <span className='text-white/60 text-sm text-center px-2'>{title}</span>
           </div>
         )}
       </div>
@@ -60,71 +57,58 @@ const MovieCard = ({ item, onPlayTrailer, onMoreInfo, mediaType = 'movie' }) => 
       {/* Expanded hover card */}
       {isHovered && (
         <div
-          className="absolute left-1/2 -translate-x-1/2 w-[280px] md:w-[320px] bg-[#181818] rounded-lg shadow-2xl z-[100] overflow-hidden"
+          className='absolute left-1/2 -translate-x-1/2 w-[280px] md:w-[320px] bg-[#181818] rounded-lg shadow-2xl z-[100] overflow-hidden'
           style={{
             top: '-16px',
             animation: 'slideUpFadeIn 0.2s ease-out',
-            transform: 'translateX(-50%)'
-          }}
-        >
+            transform: 'translateX(-50%)',
+          }}>
           {/* Preview image */}
-          <div className="relative aspect-video overflow-hidden">
+          <div className='relative aspect-video overflow-hidden'>
             {backdropUrl || displayImage ? (
-              <img
-                src={backdropUrl || displayImage}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
+              <img src={backdropUrl || displayImage} alt={title} className='w-full h-full object-cover' />
             ) : (
               <div className={`w-full h-full ${fallbackBg}`} />
             )}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#181818] via-[#181818]/80 to-transparent pointer-events-none" />
-            <h3 className="absolute bottom-3 left-3 right-3 text-white font-semibold text-sm md:text-base drop-shadow-lg line-clamp-1">
+            <div className='absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#181818] via-[#181818]/80 to-transparent pointer-events-none' />
+            <h3 className='absolute bottom-3 left-3 right-3 text-white font-semibold text-sm md:text-base drop-shadow-lg line-clamp-1'>
               {title}
             </h3>
           </div>
 
           {/* Action buttons */}
-          <div className="p-3 space-y-3">
-            <div className="flex items-center gap-2">
+          <div className='p-3 space-y-3'>
+            <div className='flex items-center gap-2'>
               <button
                 onClick={handlePlayClick}
-                className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-110 active:scale-95"
-                aria-label="Play trailer"
-              >
-                <Play className="w-5 h-5 fill-black text-black ml-0.5" />
+                className='w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-110 active:scale-95'
+                aria-label='Play trailer'>
+                <Play className='w-5 h-5 fill-black text-black ml-0.5' />
               </button>
               <button
-                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95"
-                aria-label="Add to list"
-              >
-                <Plus className="w-5 h-5 text-white" />
+                className='w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95'
+                aria-label='Add to list'>
+                <Plus className='w-5 h-5 text-white' />
               </button>
               <button
-                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95"
-                aria-label="Like"
-              >
-                <ThumbsUp className="w-4 h-4 text-white" />
+                className='w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95'
+                aria-label='Like'>
+                <ThumbsUp className='w-4 h-4 text-white' />
               </button>
               <button
                 onClick={handleMoreInfo}
-                className="w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95 ml-auto"
-                aria-label="More info"
-              >
-                <ChevronDown className="w-5 h-5 text-white" />
+                className='w-9 h-9 rounded-full border-2 border-gray-400 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95 ml-auto'
+                aria-label='More info'>
+                <ChevronDown className='w-5 h-5 text-white' />
               </button>
             </div>
 
             {/* Info */}
-            <div className="flex items-center gap-2 text-sm flex-wrap">
-              {rating && (
-                <span className="text-green-500 font-semibold">{rating}% Match</span>
-              )}
-              <span className="border border-gray-500 px-1.5 py-0.5 text-gray-400 text-xs rounded">16+</span>
-              {releaseYear && (
-                <span className="text-gray-400">{releaseYear}</span>
-              )}
-              <span className="border border-gray-500 px-1.5 py-0.5 text-gray-400 text-xs rounded">HD</span>
+            <div className='flex items-center gap-2 text-sm flex-wrap'>
+              {rating && <span className='text-green-500 font-semibold'>{rating}% Match</span>}
+              <span className='border border-gray-500 px-1.5 py-0.5 text-gray-400 text-xs rounded'>16+</span>
+              {releaseYear && <span className='text-gray-400'>{releaseYear}</span>}
+              <span className='border border-gray-500 px-1.5 py-0.5 text-gray-400 text-xs rounded'>HD</span>
             </div>
           </div>
         </div>
